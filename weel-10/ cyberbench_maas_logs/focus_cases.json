@@ -1,0 +1,516 @@
+{
+  "easiest_failures": [
+    {
+      "example": {
+        "example_id": "0",
+        "task": "phishing_email_classification",
+        "input_text": "You receive the following email: 'Dear user, your account has been locked. Please click this link to verify your credentials: http://malicious-example.com'. Is this email phishing or legitimate?",
+        "context": "Choices:\nA. Phishing\nB. Legitimate",
+        "gold_output": "A",
+        "difficulty": 8.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "0",
+        "task": "phishing_email_classification",
+        "success": false,
+        "maas_output": "DUMMY_ANSWER",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 8.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    },
+    {
+      "example": {
+        "example_id": "1",
+        "task": "phishing_email_classification",
+        "input_text": "Subject: Payroll update. 'All employees must update their bank details using the attached Excel file. Failure to comply within 24 hours will result in salary delays.' Is this email phishing or legitimate?",
+        "context": "Choices:\nA. Phishing\nB. Legitimate",
+        "gold_output": "A",
+        "difficulty": 9.5,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "1",
+        "task": "phishing_email_classification",
+        "success": false,
+        "maas_output": "DUMMY_ANSWER",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 9.5,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    },
+    {
+      "example": {
+        "example_id": "2",
+        "task": "malware_family_mcq",
+        "input_text": "A Windows host is observed making periodic HTTP POST requests to random-looking subdomains of a known dynamic DNS provider, with Base64-encoded payloads. Which malware family does this behavior most closely resemble?",
+        "context": "Choices:\nA. TrickBot\nB. Emotet\nC. Cobalt Strike\nD. WannaCry",
+        "gold_output": "C",
+        "difficulty": 10.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "2",
+        "task": "malware_family_mcq",
+        "success": false,
+        "maas_output": "DUMMY_ANSWER",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 10.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    },
+    {
+      "example": {
+        "example_id": "3",
+        "task": "malware_family_mcq",
+        "input_text": "An analyst observes SMB scanning on port 445 followed by EternalBlue-style exploit attempts across an internal subnet. Shortly after, multiple hosts begin encrypting user documents and appending a new extension. Which malware family is most likely responsible?",
+        "context": "Choices:\nA. NotPetya\nB. WannaCry\nC. Ryuk\nD. Locky",
+        "gold_output": "B",
+        "difficulty": 11.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "3",
+        "task": "malware_family_mcq",
+        "success": false,
+        "maas_output": "DUMMY_ANSWER",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 11.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    },
+    {
+      "example": {
+        "example_id": "4",
+        "task": "log_anomaly_detection",
+        "input_text": "Jan 10 10:21:33 web01 sshd[1024]: Failed password for invalid user test from 192.0.2.10 port 55432 ssh2\nJan 10 10:21:34 web01 sshd[1025]: Failed password for invalid user guest from 192.0.2.10 port 55433 ssh2\nJan 10 10:21:35 web01 sshd[1026]: Failed password for root from 192.0.2.10 port 55434 ssh2",
+        "context": "Choices:\nA. Normal activity\nB. Brute-force attack\nC. Backup job\nD. Software update",
+        "gold_output": "B",
+        "difficulty": 12.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "4",
+        "task": "log_anomaly_detection",
+        "success": false,
+        "maas_output": "DUMMY_ANSWER",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 12.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    }
+  ],
+  "hardest_successes": [
+    {
+      "example": {
+        "example_id": "5",
+        "task": "phishing_email_classification",
+        "input_text": "Subject: Urgent VPN token reset. 'Our records show that your VPN token is about to expire. To avoid loss of access, please sign in with your corporate credentials at the following link and confirm your phone number.' The link points to a domain that visually resembles the real SSO page but is hosted on an unrelated cloud provider.",
+        "context": "Choices:\nA. Phishing\nB. Legitimate",
+        "gold_output": "A",
+        "difficulty": 22.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "5",
+        "task": "phishing_email_classification",
+        "success": true,
+        "maas_output": "A",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 22.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    },
+    {
+      "example": {
+        "example_id": "6",
+        "task": "malware_family_mcq",
+        "input_text": "A threat hunt uncovers beacons from multiple hosts to a single external IP over HTTPS on a non-standard port. The HTTP headers include a custom user-agent string that mimics a legitimate browser but contains a campaign ID, and the C2 server supports tasking such as running PowerShell commands and uploading files. Which malware family does this most closely resemble?",
+        "context": "Choices:\nA. TrickBot\nB. Emotet\nC. Cobalt Strike\nD. WannaCry",
+        "gold_output": "C",
+        "difficulty": 25.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "6",
+        "task": "malware_family_mcq",
+        "success": true,
+        "maas_output": "C",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 25.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    },
+    {
+      "example": {
+        "example_id": "7",
+        "task": "incident_timeline_summarization",
+        "input_text": "09:12: User reports slow performance on file server.\n09:14: Monitoring detects spike in SMB traffic.\n09:16: IDS alerts on suspicious outbound connections from the file server to an external IP.\n09:20: Multiple files on the server are renamed with .lock extension and become unreadable.\n09:25: Ransom note discovered in each encrypted directory.",
+        "context": null,
+        "gold_output": "Ransomware outbreak with lateral movement from file server and outbound C2 traffic before mass encryption.",
+        "difficulty": 30.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "7",
+        "task": "incident_timeline_summarization",
+        "success": true,
+        "maas_output": "The incident involved lateral movement from the file server and outbound command-and-control traffic, followed by widespread ransomware encryption.",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 30.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    },
+    {
+      "example": {
+        "example_id": "8",
+        "task": "ioc_extraction_ner",
+        "input_text": "The investigation revealed that the attacker used the domain mal0icious-example.com and the IP address 198.51.100.42 to host the command-and-control server. Several phishing emails also linked to hxxp://secure-login-example.net.",
+        "context": null,
+        "gold_output": "mal0icious-example.com, 198.51.100.42, secure-login-example.net",
+        "difficulty": 32.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "8",
+        "task": "ioc_extraction_ner",
+        "success": true,
+        "maas_output": "Extracted IOCs: mal0icious-example.com, 198.51.100.42, secure-login-example.net",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 32.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    },
+    {
+      "example": {
+        "example_id": "9",
+        "task": "log_anomaly_detection",
+        "input_text": "Mar 15 03:02:11 db01 sshd[2201]: Accepted password for backup from 10.0.0.5 port 52220 ssh2\nMar 15 03:02:12 db01 sudo:  backup : TTY=pts/3 ; PWD=/home/backup ; USER=root ; COMMAND=/usr/bin/rsync -av /var/lib/mysql /mnt/backup\nMar 15 03:15:45 db01 sshd[2212]: Accepted password for backup from 10.0.0.5 port 52221 ssh2\nMar 15 03:15:46 db01 sudo:  backup : TTY=pts/3 ; PWD=/home/backup ; USER=root ; COMMAND=/usr/bin/rsync -av /var/log /mnt/backup",
+        "context": "Choices:\nA. Normal activity\nB. Brute-force attack\nC. Data exfiltration over DNS\nD. Ransomware encryption",
+        "gold_output": "A",
+        "difficulty": 35.0,
+        "meta": {
+          "source": "CyberBench",
+          "split": "test"
+        }
+      },
+      "maas_result": {
+        "example_id": "9",
+        "task": "log_anomaly_detection",
+        "success": true,
+        "maas_output": "A",
+        "chosen_architecture": {
+          "nodes": [
+            "user",
+            "planner",
+            "solver",
+            "verifier"
+          ],
+          "edges": [
+            [
+              "user",
+              "planner"
+            ],
+            [
+              "planner",
+              "solver"
+            ],
+            [
+              "solver",
+              "verifier"
+            ],
+            [
+              "verifier",
+              "user"
+            ]
+          ]
+        },
+        "difficulty": 35.0,
+        "debug_info": {
+          "note": "MaAS internal single-query API not available or failed; using dummy output/arch for structure only.",
+          "stub": true
+        }
+      }
+    }
+  ]
+}
