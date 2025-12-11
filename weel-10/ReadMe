@@ -1,1 +1,15 @@
+# MaAS on CyberBench
 
+This repo contains my assignment for running MaAS on a new benchmark suite (CyberBench).
+
+- `week10.py`: end-to-end Colab script that:
+  - Clones MaAS and CyberBench
+  - Builds `data/cyberbench.csv`
+  - Maps CyberBench rows into a `BenchmarkExample` format
+  - Adapts them into MaAS queries
+  - Runs a single-query wrapper and logs results
+- `cyberbench_maas_logs/results.jsonl`: JSONL log of per-example MaAS results.
+- `cyberbench_maas_logs/focus_cases.json`: JSON with the 5 easiest failures and 5 hardest successes.
+- `maas_cyberbench_report.md`: deep-dive analysis of those 10 focus cases, including architectures and root-cause discussion.
+
+Note: due to limitations in the public MaAS repo’s single-query API, the script uses a documented stub for the architecture and answer when necessary, and this is noted in the logs and report.
